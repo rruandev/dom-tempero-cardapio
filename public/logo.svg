@@ -1,18 +1,71 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 1000" width="1000" height="1000">
   <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="75%">
+      <stop offset="0%" stop-color="#1E4A3B"/>
+      <stop offset="70%" stop-color="#16382E"/>
+      <stop offset="100%" stop-color="#102A22"/>
+    </radialGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#E0BE7A"/>
+      <stop offset="0%" stop-color="#E3C57F"/>
       <stop offset="50%" stop-color="#C9A45B"/>
-      <stop offset="100%" stop-color="#A8823D"/>
+      <stop offset="100%" stop-color="#B08D45"/>
     </linearGradient>
+    <path id="leaf" d="M0 0 Q9 -5 15 -17 Q3 -12 0 0 Z" fill="#C9A45B"/>
+    <g id="leafpair">
+      <use xlink:href="#leaf"/>
+      <use xlink:href="#leaf" transform="scale(-1,1)"/>
+    </g>
   </defs>
-  <circle cx="120" cy="120" r="114" fill="#16382E"/>
-  <circle cx="120" cy="120" r="106" fill="none" stroke="url(#gold)" stroke-width="2.5"/>
-  <circle cx="120" cy="120" r="98" fill="none" stroke="url(#gold)" stroke-width="1" opacity="0.55"/>
-  <text x="120" y="118" text-anchor="middle" dominant-baseline="middle" font-family="Georgia, 'Times New Roman', serif" font-size="72" font-style="italic" letter-spacing="2" fill="url(#gold)">DT</text>
-  <path d="M78 152 h84" stroke="url(#gold)" stroke-width="1.2" opacity="0.7"/>
-  <circle cx="120" cy="66" r="2.2" fill="url(#gold)"/>
-  <path d="M104 66 h10 M126 66 h10" stroke="url(#gold)" stroke-width="1" opacity="0.7"/>
-  <text x="120" y="176" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="4" fill="#F8F5EE">DOM</text>
-  <text x="120" y="200" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="19" letter-spacing="5" fill="url(#gold)">TEMPERO</text>
+
+  <circle cx="500" cy="500" r="490" fill="url(#bg)"/>
+  <circle cx="500" cy="500" r="462" fill="none" stroke="url(#gold)" stroke-width="3"/>
+  <circle cx="500" cy="500" r="450" fill="none" stroke="url(#gold)" stroke-width="1.2" opacity="0.8"/>
+
+  <!-- raminho no topo -->
+  <g stroke="#C9A45B" fill="#C9A45B">
+    <line x1="500" y1="185" x2="500" y2="245" stroke-width="3"/>
+    <circle cx="500" cy="182" r="4" stroke="none"/>
+    <path d="M500 205 Q485 198 476 186 Q492 188 500 200 Z" stroke="none"/>
+    <path d="M500 205 Q515 198 524 186 Q508 188 500 200 Z" stroke="none"/>
+    <path d="M500 225 Q483 219 473 206 Q491 209 500 220 Z" stroke="none"/>
+    <path d="M500 225 Q517 219 527 206 Q509 209 500 220 Z" stroke="none"/>
+  </g>
+
+  <!-- DOM -->
+  <text x="500" y="455" text-anchor="middle" font-family="Playfair Display, Georgia, 'Times New Roman', serif" font-size="185" font-weight="700" letter-spacing="18" fill="url(#gold)">DOM</text>
+
+  <!-- divisor -->
+  <g stroke="#C9A45B" stroke-width="2.5">
+    <line x1="345" y1="500" x2="470" y2="500"/>
+    <line x1="530" y1="500" x2="655" y2="500"/>
+  </g>
+  <circle cx="500" cy="500" r="5" fill="#C9A45B"/>
+
+  <!-- TEMPERO -->
+  <text x="500" y="605" text-anchor="middle" font-family="Playfair Display, Georgia, 'Times New Roman', serif" font-size="100" font-weight="500" letter-spacing="22" fill="#F8F5EE">TEMPERO</text>
+
+  <!-- slogan -->
+  <text x="500" y="680" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="44" font-style="italic" fill="#C9A45B">O almoço de respeito de Sobradinho</text>
+
+  <!-- ramos de louro -->
+  <g>
+    <path d="M500 838 A 338 338 0 0 1 213 660" fill="none" stroke="#C9A45B" stroke-width="2.5"/>
+    <path d="M500 838 A 338 338 0 0 0 787 660" fill="none" stroke="#C9A45B" stroke-width="2.5"/>
+    <!-- folhas ao longo do arco esquerdo -->
+    <use xlink:href="#leafpair" transform="rotate(14 500 500) translate(500 838) rotate(14)"/>
+    <use xlink:href="#leafpair" transform="rotate(26 500 500) translate(500 838) rotate(26)"/>
+    <use xlink:href="#leafpair" transform="rotate(38 500 500) translate(500 838) rotate(38)"/>
+    <use xlink:href="#leafpair" transform="rotate(50 500 500) translate(500 838) rotate(50)"/>
+    <use xlink:href="#leafpair" transform="rotate(62 500 500) translate(500 838) rotate(62)"/>
+    <!-- folhas ao longo do arco direito -->
+    <use xlink:href="#leafpair" transform="rotate(-14 500 500) translate(500 838) rotate(-14)"/>
+    <use xlink:href="#leafpair" transform="rotate(-26 500 500) translate(500 838) rotate(-26)"/>
+    <use xlink:href="#leafpair" transform="rotate(-38 500 500) translate(500 838) rotate(-38)"/>
+    <use xlink:href="#leafpair" transform="rotate(-50 500 500) translate(500 838) rotate(-50)"/>
+    <use xlink:href="#leafpair" transform="rotate(-62 500 500) translate(500 838) rotate(-62)"/>
+    <!-- bagas centrais -->
+    <circle cx="491" cy="845" r="7" fill="#E3C57F"/>
+    <circle cx="509" cy="845" r="7" fill="#E3C57F"/>
+    <circle cx="500" cy="832" r="6" fill="#C9A45B"/>
+  </g>
 </svg>
