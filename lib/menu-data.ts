@@ -118,9 +118,9 @@ export const DISHES: Dish[] = [
   // ── À la Carte ───────────────────────────────────────────────────
   {
     id: "alacarte-parmegiana",
-    name: "Parmegiana",
+    name: "Parmegiana de Frango",
     description:
-      "Filé empanado coberto com molho de tomate e queijo gratinado, arroz e fritas.",
+      "Filé de frango empanado coberto com molho de tomate e queijo gratinado, arroz e fritas.",
     price: 35.9,
     image: img("photo-1600891964092-4316c288032e"),
     category: "alacarte",
