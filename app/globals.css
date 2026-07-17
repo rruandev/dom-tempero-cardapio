@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --color-forest: #16382e;
+  --color-forest-deep: #0f2a22;
+  --color-forest-light: #1e4a3d;
+  --color-gold: #c9a45b;
+  --color-gold-light: #e0be7a;
+  --color-gold-dark: #a8823d;
+  --color-cream: #f8f5ee;
+  --color-cream-dark: #efe9db;
+
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-body: var(--font-poppins), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-forest);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-forest-deep);
+}
+
+/* Subtle texture over the deep green hero */
+.texture-forest {
+  background-color: var(--color-forest);
+  background-image:
+    radial-gradient(ellipse at 50% 0%, rgba(201, 164, 91, 0.08), transparent 60%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(248, 245, 238, 0.015) 0px,
+      rgba(248, 245, 238, 0.015) 1px,
+      transparent 1px,
+      transparent 12px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(248, 245, 238, 0.015) 0px,
+      rgba(248, 245, 238, 0.015) 1px,
+      transparent 1px,
+      transparent 12px
+    );
+}
+
+/* Thin gold divider ornament */
+.gold-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.gold-divider::before,
+.gold-divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to var(--dir, right), transparent, var(--color-gold));
+}
+.gold-divider::before {
+  --dir: right;
+}
+.gold-divider::after {
+  --dir: left;
+}
+
+/* Hide scrollbar for the horizontal nav on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar in the cart drawer */
+.cart-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.cart-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.cart-scroll::-webkit-scrollbar-thumb {
+  background: rgba(201, 164, 91, 0.4);
+  border-radius: 3px;
+}
