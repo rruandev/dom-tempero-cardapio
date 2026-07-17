@@ -24,11 +24,18 @@ export default function MenuSections() {
             id={cat.id}
             className="mx-auto max-w-6xl scroll-mt-24 px-4 pt-14"
           >
-            <div className="mb-7 flex items-center gap-4">
-              <h2 className="font-display text-2xl text-forest sm:text-[28px]">
-                {cat.label}
-              </h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-gold/60 to-transparent" />
+            <div className="mb-7">
+              <div className="flex items-center gap-4">
+                <h2 className="font-display text-2xl text-forest sm:text-[28px]">
+                  {cat.label}
+                </h2>
+                <div className="h-px flex-1 bg-gradient-to-r from-gold/60 to-transparent" />
+              </div>
+              {cat.note && (
+                <p className="mt-2 text-[13px] font-light italic text-forest/60">
+                  {cat.note}
+                </p>
+              )}
             </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {dishes.map((dish) => (

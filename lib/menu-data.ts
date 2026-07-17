@@ -13,6 +13,7 @@ export interface Dish {
 export interface Category {
   id: string;
   label: string;
+  note?: string;
 }
 
 export const RESTAURANT = {
@@ -25,7 +26,14 @@ export const RESTAURANT = {
   instagramHandle: "@domtemperodf",
   mapsUrl:
     "https://maps.google.com/?q=Quadra+8+Conj.+A+lote+17+Sobradinho+Bras%C3%ADlia+DF+73005-081",
-  hours: [{ days: "Segunda a Sábado", time: "10:50 às 16h" }],
+  hours: [
+    { days: "Segunda a Sábado", time: "11h às 15h" },
+    { days: "Domingo", time: "Fechado" },
+  ],
+  services: "Self-service, marmitex e delivery",
+  payment: "Aceitamos Pix e cartão",
+  disclaimer:
+    "Cardápio sujeito a alterações conforme disponibilidade. Preços válidos a partir de julho/2026.",
 };
 
 export interface WeeklyDay {
@@ -49,71 +57,110 @@ export const WEEKLY_MENU: WeeklyDay[] = [
   {
     weekday: 2,
     day: "Terça",
-    carnes: ["Bife acebolado", "Linguiça acebolada"],
+    carnes: ["Bisteca suína acebolada", "Linguiça toscana acebolada"],
     acompanhamentos: ["Arroz branco", "Feijão carioca", "Macarrão ao sugo"],
     guarnicoes: ["Purê de batata", "Vinagrete"],
   },
   {
     weekday: 3,
     day: "Quarta",
-    carnes: ["Frango à milanesa", "Carne de panela"],
+    carnes: ["Carne de panela", "Frango à milanesa"],
     acompanhamentos: ["Arroz branco", "Arroz à grega", "Feijão carioca"],
     guarnicoes: ["Mandioca cozida", "Salada de repolho"],
   },
   {
     weekday: 4,
     day: "Quinta",
-    carnes: ["Costelinha de porco", "Frango grelhado"],
+    carnes: ["Costelinha suína", "Frango grelhado"],
     acompanhamentos: ["Arroz branco", "Feijão tropeiro", "Macarrão na manteiga"],
     guarnicoes: ["Couve refogada", "Banana frita"],
   },
   {
     weekday: 5,
     day: "Sexta",
-    carnes: ["Peixe frito (filé de tilápia)", "Strogonoff de frango"],
+    carnes: [
+      "Strogonoff de frango",
+      "Paleta assada desfiada",
+      "Tilápia frita — Sexta do peixe",
+    ],
     acompanhamentos: ["Arroz branco", "Feijão carioca", "Batata palha"],
     guarnicoes: ["Pirão ou salada mista"],
   },
   {
     weekday: 6,
     day: "Sábado",
-    carnes: ["Feijoada completa", "Frango assado"],
+    carnes: ["Feijoada completa", "Galinhada caipira"],
     acompanhamentos: ["Arroz branco", "Couve", "Laranja", "Torresmo", "Farofa"],
     guarnicoes: [],
     destaque: "O dia forte da casa",
   },
 ];
 
+export const WEEKLY_NOTE =
+  "Todos os dias: arroz soltinho, feijão temperado, macarrão, farofa, guarnições variadas e salada fresca no buffet.";
+
 export const CATEGORIES: Category[] = [
-  { id: "marmitas", label: "Marmitas" },
-  { id: "entradas", label: "Entradas & Petiscos" },
+  {
+    id: "marmitas",
+    label: "Marmitex & Pratos",
+    note: "Carnes premium do dia (maminha, tilápia e cortes especiais): acréscimo de R$ 5,00 na marmitex ou prato feito.",
+  },
+  { id: "entradas", label: "Petiscos" },
   { id: "individuais", label: "Pratos Individuais" },
   { id: "travessas", label: "Travessas para 2" },
-  { id: "especial", label: "Especial de Sábado" },
+  { id: "especial", label: "Especiais de Sábado" },
 ];
 
 const img = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=800&q=70`;
 
 export const DISHES: Dish[] = [
-  // ── Marmitas ─────────────────────────────────────────────────────
+  // ── Marmitex & Pratos ────────────────────────────────────────────
   {
-    id: "marmita-m",
-    name: "Marmita Média",
-    description:
-      "Arroz, feijão, a carne do dia, guarnições e salada. Consulte o cardápio da semana.",
-    price: 25,
+    id: "marmitex-p",
+    name: "Marmitex P",
+    description: "Arroz, feijão, 1 carne do dia e salada.",
+    price: 18,
     image: img("photo-1594041680534-e8c8cdebd659"),
+    category: "marmitas",
+    tags: [],
+  },
+  {
+    id: "marmitex-m",
+    name: "Marmitex M",
+    description: "Arroz, feijão, 1 carne do dia, guarnição e salada.",
+    price: 22,
+    image: img("photo-1604908176997-125f25cc6f3d"),
     category: "marmitas",
     tags: ["Mais vendido"],
   },
   {
-    id: "marmita-g",
-    name: "Marmita Grande",
+    id: "marmitex-g",
+    name: "Marmitex G",
     description:
-      "Arroz, feijão, a carne do dia, guarnições e salada. Para quem tem fome de respeito.",
-    price: 30,
-    image: img("photo-1604908176997-125f25cc6f3d"),
+      "Arroz, feijão, 1 carne do dia, guarnição, farofa e salada.",
+    price: 26,
+    image: img("photo-1558030006-450675393462"),
+    category: "marmitas",
+    tags: [],
+  },
+  {
+    id: "prato-feito",
+    name: "Prato Feito",
+    description:
+      "Arroz, feijão, carne do dia, ovo, guarnição e salada — no capricho.",
+    price: 24,
+    image: img("photo-1615141982883-c7ad0e69fd62"),
+    category: "marmitas",
+    tags: [],
+  },
+  {
+    id: "self-service",
+    name: "Self-service por Quilo",
+    description:
+      "Monte seu prato do seu jeito no nosso buffet. Valor por quilo.",
+    price: 54.9,
+    image: img("photo-1512621776951-a57141f2eefd"),
     category: "marmitas",
     tags: [],
   },
@@ -121,9 +168,9 @@ export const DISHES: Dish[] = [
   // ── Entradas & Petiscos ──────────────────────────────────────────
   {
     id: "ent-torresmo",
-    name: "Torresmo de Rolo",
+    name: "Torresmo Pururucado",
     description:
-      "Torresmo pururucado, sequinho e crocante, com limão e molho de pimenta.",
+      "Torresmo sequinho e crocante, com limão e molho de pimenta.",
     price: 20,
     image: img("photo-1608039755401-742074f0548d"),
     category: "entradas",
@@ -134,7 +181,7 @@ export const DISHES: Dish[] = [
     name: "Frango a Passarinho",
     description:
       "Coxa e sobrecoxa fritas e douradas, cobertas com alho frito crocante.",
-    price: 27,
+    price: 28,
     image: img("photo-1626082927389-6cd097cdc6ec"),
     category: "entradas",
     tags: [],
@@ -215,7 +262,7 @@ export const DISHES: Dish[] = [
   // ── Travessas para 2 ─────────────────────────────────────────────
   {
     id: "trav-costela",
-    name: "Costela Gaúcha com Batata",
+    name: "Costela na Pressão com Batata",
     description:
       "Costela cozida na pressão até desmanchar, servida com batatas. Serve 2.",
     price: 65,
@@ -284,6 +331,16 @@ export const DISHES: Dish[] = [
     image: img("photo-1574484284002-952d92456975"),
     category: "especial",
     tags: [],
+  },
+  {
+    id: "esp-maminha",
+    name: "Maminha Assada na Travessa",
+    description:
+      "Maminha assada lentamente, macia e suculenta. Serve 2-3. Só aos sábados.",
+    price: 110,
+    image: img("photo-1555939594-58d7cb561ad1"),
+    category: "especial",
+    tags: ["Chef recomenda"],
   },
 ];
 

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Beef, Soup, Salad, Star } from "lucide-react";
-import { WEEKLY_MENU } from "@/lib/menu-data";
+import { WEEKLY_MENU, WEEKLY_NOTE } from "@/lib/menu-data";
 
 function todayIndex() {
   // Domingo (0) e horários fora da semana caem em Segunda
@@ -104,6 +104,10 @@ export default function WeeklyMenu() {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        <p className="mt-6 text-center text-[13px] font-light italic text-cream/55">
+          {WEEKLY_NOTE}
+        </p>
       </div>
     </section>
   );

@@ -24,6 +24,12 @@ export default function Footer() {
           <p className="text-sm font-light italic text-cream/60">
             {RESTAURANT.slogan}
           </p>
+          <p className="text-xs font-light text-cream/50">
+            {RESTAURANT.services}
+          </p>
+          <p className="text-xs font-light text-cream/50">
+            {RESTAURANT.payment}
+          </p>
         </div>
 
         <div>
@@ -91,9 +97,12 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gold/15 py-5 text-center text-xs font-light tracking-wide text-cream/45">
-        © {new Date().getFullYear()} Dom Tempero — Todos os direitos
-        reservados.
+      <div className="space-y-1.5 border-t border-gold/15 py-5 text-center text-xs font-light tracking-wide text-cream/45">
+        <p>
+          © {new Date().getFullYear()} Dom Tempero — Todos os direitos
+          reservados.
+        </p>
+        <p className="text-[11px] text-cream/35">{RESTAURANT.disclaimer}</p>
       </div>
     </footer>
   );
