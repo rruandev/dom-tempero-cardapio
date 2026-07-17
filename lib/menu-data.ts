@@ -113,7 +113,7 @@ export const DISHES: Dish[] = [
     description:
       "Arroz, feijão, a carne do dia, guarnições e salada. Para quem tem fome de respeito.",
     price: 30,
-    image: img("photo-1610970881699-44a5587cabec"),
+    image: img("photo-1604908176997-125f25cc6f3d"),
     category: "marmitas",
     tags: [],
   },
@@ -125,7 +125,7 @@ export const DISHES: Dish[] = [
     description:
       "Torresmo pururucado, sequinho e crocante, com limão e molho de pimenta.",
     price: 20,
-    image: img("photo-1606313564200-e75d5e30476c"),
+    image: img("photo-1608039755401-742074f0548d"),
     category: "entradas",
     tags: ["Mais vendido"],
   },
@@ -187,7 +187,7 @@ export const DISHES: Dish[] = [
     description:
       "Carne cozida lentamente até desfiar, com mandioca macia e caldo encorpado.",
     price: 30,
-    image: img("photo-1600335895229-6e75511892c8"),
+    image: img("photo-1596797038530-2c107229654b"),
     category: "individuais",
     tags: [],
   },
@@ -229,7 +229,7 @@ export const DISHES: Dish[] = [
     description:
       "Paleta assada e desfiada, com arroz branco soltinho e farofa. Serve 2.",
     price: 60,
-    image: img("photo-1624353365286-3f8d62daad51"),
+    image: img("photo-1599487488170-d11ec9c172f0"),
     category: "travessas",
     tags: [],
   },
@@ -259,7 +259,7 @@ export const DISHES: Dish[] = [
     description:
       "Arroz caipira com galinha saborosa, açafrão e cheiro-verde. Serve 2.",
     price: 55,
-    image: img("photo-1579954115545-a95591f28bfc"),
+    image: img("photo-1512058564366-18510be2db19"),
     category: "travessas",
     tags: ["Chef recomenda"],
   },
@@ -271,7 +271,7 @@ export const DISHES: Dish[] = [
     description:
       "Feijoada completa com arroz, couve, laranja, torresmo e farofa. Só aos sábados.",
     price: 32,
-    image: img("photo-1546069901-ba9599a7e63c"),
+    image: img("photo-1585937421612-70a008356fbe"),
     category: "especial",
     tags: ["Mais vendido"],
   },
@@ -281,7 +281,7 @@ export const DISHES: Dish[] = [
     description:
       "Feijoada completa para dividir, com todos os acompanhamentos. Serve 2-3. Só aos sábados.",
     price: 65,
-    image: img("photo-1567620905732-2d1ec7ab7445"),
+    image: img("photo-1574484284002-952d92456975"),
     category: "especial",
     tags: [],
   },
