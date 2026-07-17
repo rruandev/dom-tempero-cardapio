@@ -28,6 +28,12 @@ export default function Navbar() {
         </button>
 
         <nav className="no-scrollbar flex flex-1 items-center gap-1 overflow-x-auto">
+          <button
+            onClick={() => scrollTo("semana")}
+            className="whitespace-nowrap rounded-full px-3 py-1.5 text-[13px] font-light tracking-wide text-cream/80 transition-colors hover:bg-gold/10 hover:text-gold"
+          >
+            Cardápio da Semana
+          </button>
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}

@@ -38,6 +38,62 @@ export const RESTAURANT = {
   hours: [{ days: "Segunda a Sábado", time: "10:50 às 16h" }],
 };
 
+export interface WeeklyDay {
+  /** 1 = segunda ... 6 = sábado (Date.getDay) */
+  weekday: number;
+  day: string;
+  carnes: string[];
+  acompanhamentos: string[];
+  guarnicoes: string[];
+  destaque?: string;
+}
+
+export const WEEKLY_MENU: WeeklyDay[] = [
+  {
+    weekday: 1,
+    day: "Segunda",
+    carnes: ["Frango assado", "Carne moída com batata"],
+    acompanhamentos: ["Arroz branco", "Feijão carioca", "Macarrão alho e óleo"],
+    guarnicoes: ["Farofa", "Salada verde"],
+  },
+  {
+    weekday: 2,
+    day: "Terça",
+    carnes: ["Bife acebolado", "Linguiça acebolada"],
+    acompanhamentos: ["Arroz branco", "Feijão carioca", "Macarrão ao sugo"],
+    guarnicoes: ["Purê de batata", "Vinagrete"],
+  },
+  {
+    weekday: 3,
+    day: "Quarta",
+    carnes: ["Frango à milanesa", "Carne de panela"],
+    acompanhamentos: ["Arroz branco", "Arroz à grega", "Feijão carioca"],
+    guarnicoes: ["Mandioca cozida", "Salada de repolho"],
+  },
+  {
+    weekday: 4,
+    day: "Quinta",
+    carnes: ["Costelinha de porco", "Frango grelhado"],
+    acompanhamentos: ["Arroz branco", "Feijão tropeiro", "Macarrão na manteiga"],
+    guarnicoes: ["Couve refogada", "Banana frita"],
+  },
+  {
+    weekday: 5,
+    day: "Sexta",
+    carnes: ["Peixe frito (filé de tilápia)", "Strogonoff de frango"],
+    acompanhamentos: ["Arroz branco", "Feijão carioca", "Batata palha"],
+    guarnicoes: ["Pirão ou salada mista"],
+  },
+  {
+    weekday: 6,
+    day: "Sábado",
+    carnes: ["Feijoada completa", "Frango assado"],
+    acompanhamentos: ["Arroz branco", "Couve", "Laranja", "Torresmo", "Farofa"],
+    guarnicoes: [],
+    destaque: "O dia forte da casa",
+  },
+];
+
 export const CATEGORIES: Category[] = [
   { id: "pratos-feitos", label: "Pratos Feitos" },
   { id: "marmitas", label: "Marmitas" },
