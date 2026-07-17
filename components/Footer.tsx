@@ -84,7 +84,7 @@ export default function Footer() {
                 className="flex items-center gap-2 transition-colors hover:text-gold"
               >
                 <Instagram size={14} className="text-gold/70" />
-                @domtempero
+                {RESTAURANT.instagramHandle}
               </a>
             </li>
           </ul>
